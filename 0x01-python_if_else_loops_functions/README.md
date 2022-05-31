@@ -1,1 +1,0 @@
-Practicing working with if statements, loops and functions.
