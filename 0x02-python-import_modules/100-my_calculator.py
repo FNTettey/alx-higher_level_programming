@@ -10,7 +10,6 @@ if __name__ == "__main__":
         a = int(argv[1])
         op = argv[2]
         b = int(argv[3])
-   
     sum = calc.add(a, b)
     sub = calc.sub(a, b)
     product = calc.mul(a, b)
