@@ -16,5 +16,11 @@ def roman_to_int(roman_string):
                 elif roman_string[x + 1] == 'V':
                     value = value - 1
                     continue
+            elif roman_string[x] == 'X':
+                if roman_string[x + 1] == 'C':
+                    value = value - 10
+            elif roman_string[x] == 'C':
+                if roman_string[x + 1] == 'M':
+                    value = value - 100
         value = value + rn[roman_string[x]]    
     return(value)
