@@ -1,0 +1,68 @@
+The 2-matrix_divided test module.
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+
+Using "matrix_divided "
+++++++++++++++++++++++++++++++++++++
+
+Import function from module:
+
+    >>> matrix_divided  = __import__('2-matrix_divided').matrix_divided 
+
+Test normal matrix i.e correct input:
+    >>> matrix_divided([[2, 4, 8], [1, 2, 3]], 2)
+    [[1.0, 2.0, 4.0], [0.5, 1.0, 1.5]]
+
+Test one element:
+    >>> matrix_divided([[6]], 3)
+    [[2.0]]
+
+Test division by negative:
+    >>> matrix_divided([[2, 4, 8], [1, 2, 3]], -2)
+    [[-1.0, -2.0, -4.0], [-0.5, -1.0, -1.5]]
+
+Test division by inf:
+    >>> matrix_divided([[2, 4, 8], [1, 2, 3]], float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Test division by zero
+    >>> matrix_divided([[2, 4, 8], [1, 2, 3]], 0)
+    Traceback: (most recent call last):
+    ...
+    ZeroDivisionError: division by zero.
+    
+Test division by a string 
+    >>> matrix_divided([[2, 4, 8], [1, 2, 3]], "help")
+    Traceback: (most recent call last):
+    ...
+    TypeError: div must be a number.
+
+Test first parameter not a matrix
+    >>> matrix_divided(12, 4) # doctest: 
+    Traceback: (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats.
+
+Test Different size rows
+    >>> matrix_divided([[2, 4, 8], [1, 2]], 2) # doctest:
+    Traceback: (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size.
+    
+Test 1st arg None:
+    >>> matrix_divided(none, 1): # doctest: 
+    Traceback: (most recent call last):
+    ...
+    NameError: Name 'none' is not defined
+
+Test empty matrix:
+    >>> matrix_divided([[]], 10) # doctest: 
+    Traceback: (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test with misiing argument:
+    >>> matrix_divided() # doctest:
+    Traceback: (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix'and 'div'
+
