@@ -18,7 +18,7 @@ Test only first name
 
 Test first name not a string
     >>> say_my_name(12, "scott")
-    Traceback: (most recent call last):
+    Traceback (most recent call last):
         ...
     TypeError: first_name must be a string
 
@@ -40,12 +40,12 @@ Test empty firstname:
 
 Test last name not a string
     >>> say_my_name("scott", 12)
-    Traceback: (most recent call last):
+    Traceback (most recent call last):
         ...
     TypeError: last_name must be a string
     
 Test no parameters
     >>> say_my_name()
-    Traceback: (most recent call last):
+    Traceback (most recent call last):
         ...
     TypeError: say_my_name() missing 1 required positional argument: 'first_name'
