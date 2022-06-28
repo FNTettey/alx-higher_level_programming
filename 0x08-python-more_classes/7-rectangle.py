@@ -1,0 +1,100 @@
+#!/usr/bin/python3
+"""define a class Rectangle."""
+
+
+class Rectangle:
+    """ Represents a Rectangle:"""
+    number_of_instances = 0
+    print_symbol = "#"
+
+    def __init__(self, width=0, height=0):
+        """Initialize a new Rectangle.
+        Args:
+            width (int): The width of the new Rectangle.
+            height (int): The height of the new Rectangle.
+
+        Raises:
+            TypeError: if width/height is not int.
+            ValueError: if width/ height is not >= 0
+        """
+        self.width = width
+        self.height = height
+
+    @property
+    def width(self):
+        """Get/set the current __width of the Rectangle."""
+        return (self.__width)
+
+    @width.setter
+    def width(self, value):
+        """
+            setter function for private attribute width.
+            Args:
+                value(int) new width value.
+            Raises:
+                TypeError: if value is not int.
+                ValueError: if value is not >= 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        elif value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+        Rectangle.number_of_instances += 1
+
+    @property
+    def height(self):
+        """Get/set the current __height of the Rectangle."""
+        return (self.__height)
+
+    @height.setter
+    def height(self, value):
+        """
+            setter function for private attribute height.
+            Args:
+                value(int) new width value.
+            Raises:
+                TypeError: if value is not int.
+                ValueError: if value is not >= 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        elif value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
+
+    def perimeter(self):
+        """Public instance method to compute perimeter of triangle.
+           Returns: perimeter of triangle.
+        """
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return (self.__width * 2) + (self.__height * 2)
+
+    def area(self):
+        """Public instance method to compute area of rectangle.
+           Returns: area of rectangle.
+        """
+        return self.__width * self.__height
+
+    def __str__(self):
+        """returns string representation of a rectangle.
+        """
+        string = ""
+        if self.__width != 0 and self.__height != 0:
+            string += "\n".join(str(self.print_symbol) * self.__width
+                                for j in range(self.__height))
+        return string
+
+    def __repr__(self):
+        """Return string representation of rectangle.
+            Should be able to create a new instance using eval().
+        """
+
+        return '{self.__class__.__name__}({self.width}, {self.height})'.\
+            format(self=self)
+
+    def __del__(self):
+        """ Prints a message when an instance is deleted"""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
