@@ -22,5 +22,5 @@ class Student():
             try:
                 new_dict[a] = self.__dict__[a]
             except:
-                pass
+                continue
         return new_dict
