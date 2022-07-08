@@ -1,5 +1,6 @@
 # 0x0C-python-almost_a_circle
-### models/
+## models/
+This folder contains all the classes for this project.
 
 ##### base.py
 This file contains a class Base. It is the 'base' of all other classes in this project. Main goal is to manage id attribute to avoid code duplication.
@@ -13,11 +14,8 @@ This file contains the a class Square that implements the class Rectangle.
 ##### init.py
 This makes the folder a python module.
 
-### tests/
+## tests/
 This folder contains the test files and folders of this project.
-
-##### test_models/
-Test folder contains unittests for the model folder.
 
 ##### test_base.py
 Test case for base.py.
