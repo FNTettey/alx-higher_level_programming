@@ -97,9 +97,16 @@ class Rectangle(Base):
     def display(self):
         """prints in stdout the Rectangle instance with the character #"""
         """Print the square with the # character."""
-        for i in range(0, self.__width):
-            [print("#", end="") for j in range(self.__height)]
-            print("")
+#        for i in range(0, self.__width):
+#            [print("#", end="") for j in range(self.__height)]
+#            print("")
+        rectangle = ""
+        print_symbol = "#"
+        print("\n" * self.y, end="")
+
+        for i in range(self.height):
+            rectangle += (" " * self.x) + (print_symbol*self.width) + "\n"
+        print(rectangle, end="")
 
     def __str__(self):
         return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,
