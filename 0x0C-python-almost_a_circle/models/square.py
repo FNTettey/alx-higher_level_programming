@@ -10,7 +10,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """initialises Square (overrides Rectangle init)"""
         super().__init__(size, size, x, y, id)
-    
+
     @property
     def size(self):
         """
@@ -30,7 +30,7 @@ class Square(Rectangle):
 
         self.width = value
         self.height = value
-    
+
     def __str__(self):
         """ Overloading str function """
         return "[{}] ({}) {}/{} - {}".format(type(self).__name__,
@@ -60,6 +60,3 @@ class Square(Rectangle):
                 'size': getattr(self, "width"),
                 'x': getattr(self, "x"),
                 'y': getattr(self, "y")}
-
-
-
