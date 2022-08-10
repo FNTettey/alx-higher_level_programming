@@ -1,0 +1,1 @@
+# Continuing to work with SQL and starting to implement Join statements

@@ -1,4 +1,6 @@
--- creating a new user
+-- creating a new user 'user_0d_1'
+-- password for user set as 'user_0d_1_pwd'
+-- if user already exists, script should not fail
 CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost'
 IDENTIFIED BY 'user_0d_1_pwd';
 GRANT ALL PRIVILEGES ON *.*
