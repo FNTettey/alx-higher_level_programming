@@ -4,6 +4,7 @@ module.exports = class Rectangle {
     if (typeof (width) === 'number' && typeof (height) === 'number' && width > 0 && height > 0) {
       this.width = width;
       this.height = height;
+      this.char = 'X';
     }
   }
 
@@ -12,7 +13,7 @@ module.exports = class Rectangle {
       let j = 0;
 
       for (; j < this.width; ++j) {
-        process.stdout.write('X');
+        process.stdout.write(this.char);
       }
 
       if (j === this.width) {
